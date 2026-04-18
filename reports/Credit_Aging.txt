@@ -1,0 +1,21 @@
+ACCOUNTS RECEIVABLE AGING ANALYSIS
+
+Key Metrics:
+- Total AR Balance
+- Current (Not Yet Due)
+- 30-60 Days Overdue
+- 60-90 Days Overdue
+- 90+ Days Overdue
+- Days Sales Outstanding (DSO)
+- Collection Rate
+
+Report Columns:
+- Customer
+- Total AR Balance
+- Current Amount
+- 30 Days Aging
+- 60 Days Aging
+- 90 Days Aging
+- 120+ Days Aging
+- Customer Credit Limit
+- Credit Utilization %

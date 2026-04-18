@@ -1,0 +1,21 @@
+REBATE MANAGEMENT CONFIGURATION
+
+Tiered Rebate Structure (Annual Volume):
+- 0% for $0-$25K
+- 2% for $25K-$75K
+- 3% for $75K-$150K
+- 4% for $150K+
+
+Accrual Basis:
+- At Invoice: Calculate rebate, post to Rebate Liability
+- At Claim: Finance reviews, generates Credit Memo
+- Reduces Customer AR Balance
+
+Claim Processing:
+- Customer files claim quarterly/annually
+- Finance approves/rejects in MCRT
+- Approved: Credit Memo reduces AR
+
+Reporting:
+- Rebate Accrual Report: Lists liabilities by customer
+- Aging Analysis: Unclaimed rebates > 12 months

@@ -1,0 +1,140 @@
+SAP O2C INTEGRATION POINTS
+
+1. INBOUND INTEGRATIONS (External → SAP)
+
+   A. E-Commerce Order Feed
+      - Format: JSON / XML
+      - Protocol: Web Services (SOAP/REST)
+      - Target Transaction: VA01 (Sales Order)
+      - Flow:
+        1. Customer places order on Shopify/Magento
+        2. Order exported to queue
+        3. SAP API (using RFC or OData) consumes order
+        4. Create Sales Order with order details
+        5. Send confirmation back to e-commerce system
+      - Error Handling: Retry logic, dead letter queue for failed orders
+
+   B. EDI Integration (B2B Customers)
+      - Format: EDIFACT / X12
+      - Protocol: EDI over VAN (Value Added Network)
+      - Target Transaction: VA01
+      - Flow:
+        1. Customer sends EDI 850 (Purchase Order)
+        2. SAP IDoc receives and validates
+        3. Create Sales Order automatically
+        4. Send EDI 855 (Order Acknowledgment) to customer
+      - Master Data: IDocs linked to Customer Master
+
+2. OUTBOUND INTEGRATIONS (SAP → External)
+
+   A. Billing Data to Accounting System
+      - Format: Flat File / XML
+      - Protocol: File Transfer / SFTP
+      - Source: Billing documents (VF01 output)
+      - Flow:
+        1. Invoice posted in FI
+        2. Trigger SD-FI interface (VBRK/VBRP tables)
+        3. Export invoice header & line items
+        4. Send to 3rd-party accounting system
+      - Field Mapping: VBRK (document level) → AR master; VBRP (line level) → GL detail
+
+   B. Shipping Notification to Logistics
+      - Format: XML / ASN (Advanced Shipping Notice)
+      - Protocol: Web Service / FTP
+      - Source: Delivery documents (VL01 output)
+      - Flow:
+        1. Goods Issue posted (VL04)
+        2. Extract delivery details
+        3. Send ASN to logistics provider
+        4. Include tracking number callback
+      - Content: Delivery number, items, qty, serial numbers
+
+   C. Payment Remittance Advice
+      - Format: SWIFT MT940 / CSV
+      - Protocol: Bank API / SFTP
+      - Source: Cash receipt (FI module)
+      - Flow:
+        1. Customer payment received
+        2. AR cleared (SAPF140_PARSE_TAX_CUSTOMIZING)
+        3. Export remittance advice
+        4. Send to customer
+
+3. BATCH INTERFACES
+
+   A. Customer Master Upload (XD01)
+      - Format: CSV / XLSX
+      - Frequency: Monthly / On-demand
+      - Content: New customers, credit limit changes, contact updates
+      - Validation: Duplicate check, mandatory field validation
+      - Error Report: Exceptions logged for manual review
+
+   B. Pricing Master Update (VK11)
+      - Format: CSV / XML
+      - Frequency: Weekly / Real-time
+      - Content: Price changes, discount tiers, surcharges
+      - Effective Date Control: Schedule price changes for future dates
+      - Version Control: Track pricing changes, maintain audit trail
+
+   C. Rebate Claim Import (MCRT)
+      - Format: XLSX with header & detail rows
+      - Frequency: Monthly
+      - Content: Customer claim reference, amount, supporting docs
+      - Validation: Amount vs. accrued liability, document verification
+      - Auto-approval: For claims within tolerance, else manual review
+
+4. REAL-TIME QUERIES (Synchronous)
+
+   A. ATP Check (Available-to-Promise)
+      - API: /sap/opu/odata/sap/C_AAVAILIBLESALESORDER
+      - Request: Material, Qty, Requested Delivery Date
+      - Response: Available Quantity, Confirmed Delivery Date
+      - Usage: E-commerce product page (inventory availability)
+
+   B. Customer Credit Status
+      - API: /sap/opu/odata/sap/C_CUSTOMERS
+      - Request: Customer Code
+      - Response: Credit Limit, Exposure, Available Balance
+      - Usage: Order entry form validation, risk assessment
+
+   C. Pricing Lookup
+      - API: /sap/opu/odata/sap/C_MATERIALSALES
+      - Request: Customer, Material, Qty
+      - Response: Base Price + Applied Discounts = Final Price
+      - Usage: E-commerce shopping cart, quote generation
+
+5. SCHEDULED BATCH JOBS
+
+   A. Dunning Run (F150)
+      - Frequency: Weekly
+      - Trigger: Overdue AR aging > configured days
+      - Output: Dunning letters to customers
+      - Notification: Email dunning manager with summary
+
+   B. Rebate Accrual Calculation
+      - Frequency: Daily (post-billing)
+      - Trigger: After invoice posting (VF02)
+      - Calculation: Invoice amount × Rebate % per tier
+      - Posting: Auto-journal entry to GL (COGS ↔ Rebate Liability)
+
+   C. Revenue Recognition Process (ASC 606)
+      - Frequency: Daily
+      - Trigger: After goods issue (VL04)
+      - Posting: Revenue account (based on delivery, not invoice)
+      - Reconciliation: Monthly SOP (Statement of Position) review
+
+6. ERROR HANDLING & MONITORING
+
+   - BDC (Batch Data Communications): For automated master data uploads
+   - RFC (Remote Function Call): For real-time API calls
+   - IDoc (Intermediate Document): For EDI / B2B integrations
+   - Message Queue: For asynchronous order processing
+   - Error Log: All failures captured, retried automatically (with exponential backoff)
+   - Alert: Critical errors escalated to operations team within 15 min
+
+7. SECURITY & COMPLIANCE
+
+   - Encryption: TLS 1.2 for all API communications
+   - Authentication: OAuth 2.0 / Client Certificate
+   - Authorization: Role-based access control (TCODE-based)
+   - Audit Trail: All transactions logged with user ID, timestamp, change details
+   - Data Retention: 7-year archival per SOX requirements

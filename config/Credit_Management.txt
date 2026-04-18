@@ -1,0 +1,16 @@
+CREDIT MANAGEMENT CONFIGURATION
+
+Credit Groups:
+- Group A: Excellent (Limit: $500,000)
+- Group B: Good (Limit: $250,000)
+- Group C: Standard (Limit: $100,000)
+- Group D: Watch (Limit: $50,000)
+
+Credit Exposure = Open AR + Open SO + Current Order
+
+Dunning Procedure:
+- Level 1 (10 days): First Reminder, $0 charge
+- Level 2 (20 days): Final Reminder, $25 charge, Block Order
+- Level 3 (30+ days): Legal Action, $50 charge, Block Order
+
+Credit Hold Approval: Order held until Credit Manager approval

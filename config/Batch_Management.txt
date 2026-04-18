@@ -1,0 +1,18 @@
+BATCH MANAGEMENT CONFIGURATION
+
+Strategy: FIFO (First-In-First-Out)
+
+Expiry Date Validation:
+- Cannot ship if (Today + 5 days) > Batch Expiry
+- Transport Time Buffer: 5 days
+
+Batch Numbering: YYYYMMNNN format (e.g., 202601001)
+
+Batch Selection Algorithm:
+1. Filter by Quality Status = Approved
+2. Filter by Stock > 0
+3. Filter by non-expired batches
+4. Sort by Creation Date (ascending)
+5. Auto-select oldest batch (FIFO)
+
+Serial Number Tracking: Mandatory for high-value items

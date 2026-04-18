@@ -1,0 +1,20 @@
+BILLING & REVENUE ANALYSIS
+
+Key Metrics:
+- Invoices Created (Daily/Weekly/Monthly)
+- Total Invoiced Amount
+- Average Invoice Value
+- Revenue by Customer
+- Revenue by Product
+- Credit Memo Impact
+- Revenue Recognition Compliance
+
+Report Columns:
+- Invoice Number
+- Invoice Date
+- Customer
+- Gross Amount
+- Discounts Applied
+- Net Amount
+- Payment Terms
+- Due Date

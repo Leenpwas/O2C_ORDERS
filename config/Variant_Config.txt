@@ -1,0 +1,20 @@
+VARIANT CONFIGURATION
+
+Configurable Material: CUSTOM-CHAIR-01
+
+Characteristics:
+- CHAIR_COLOR (Red, Blue, Green, Black, White)
+- CHAIR_SIZE (Small, Medium, Large)
+- SEAT_MATERIAL (Fabric, Leather, Microsuede)
+- ARMREST_TYPE (None, Adjustable, Fixed)
+
+Pricing Surcharges:
+- Size L: +$25, Size XL: +$50
+- Leather: +$75, Microsuede: +$50
+- Adjustable Armrest: +$60
+
+BOM Explosion:
+- Base: Frame + Seat Cushion + Casters
+- Size-dependent: Back support components
+- Material-dependent: Fabric/Leather covers
+- Armrest: Adjustable mechanism or fixed support

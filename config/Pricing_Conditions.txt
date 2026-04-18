@@ -1,0 +1,20 @@
+PRICING CONDITIONS CONFIGURATION
+
+Condition Type Definition:
+- GROSS: Base/List Price
+- DISCNT: Volume-Based Discount
+- SURCHARGE: Freight, Handling, Special Fees
+- FREE: Free Goods Promotion
+- REBATE: Rebate Accrual
+- TAX: Sales Tax / VAT
+
+Access Sequence:
+1. Customer-Material-Quantity
+2. Customer-Material
+3. Material-Quantity
+4. Material (fallback)
+
+Sample Pricing Records:
+- Customer C001, Material MAT001: $95/unit (Qty 11-50), $90/unit (51-100)
+- Freight Surcharge: $5 per order
+- Volume Discount: 5% for $10K-$25K, 10% for $25K-$50K

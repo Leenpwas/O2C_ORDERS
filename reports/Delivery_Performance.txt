@@ -1,0 +1,18 @@
+DELIVERY PERFORMANCE TRACKING
+
+Key Metrics:
+- Orders Delivered On-Time (%)
+- Average Delivery Cycle Time (Days)
+- Orders Shipped Late
+- Partial Deliveries
+- Delivery by Product
+- Delivery by Customer
+
+Report Columns:
+- Order Number
+- Delivery Date
+- Customer
+- Requested vs. Actual Delivery Date
+- Items Delivered
+- Backorder Items
+- Days Late

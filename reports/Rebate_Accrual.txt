@@ -1,0 +1,19 @@
+REBATE LIABILITY TRACKING
+
+Key Metrics:
+- Total Rebate Accruals (YTD)
+- Accrued by Customer
+- Claimed Rebates
+- Pending Approval
+- Aging (Unclaimed > 12 months)
+- Rebate Liability on Balance Sheet
+
+Report Columns:
+- Customer
+- YTD Purchases
+- Applicable Rebate Rate (%)
+- Accrued Amount
+- Claimed Amount
+- Balance Pending
+- Last Claim Date
+- Approval Status

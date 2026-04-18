@@ -1,0 +1,29 @@
+CREDIT MANAGEMENT DECISION TREE
+
+        Sales Order Entered (VA01)
+                 ↓
+        ┌─ Customer Credit Limit Exceeded? ─┐
+        │                                     │
+       NO                                    YES
+        │                                     │
+        ↓                                     ↓
+   Continue                            Order Blocked
+   Processing                           (HOLDS)
+        │                                     │
+        ↓                                     ↓
+   Check Open                       Credit Manager
+   AR Balance                        Manual Review
+        │                                     │
+        ├─ Is Total Exposure                 │
+        │  > Limit?                          │
+        │                                     │
+       NO                                    YES
+        │                                     │
+        ↓                                     ↓
+   Proceed to                        ┌─ Approved? ─┐
+   Fulfillment                       │              │
+                                    YES            NO
+                                     │              │
+                                     ↓              ↓
+                               Release Hold   Reject Order
+                               Proceed        Notify Customer

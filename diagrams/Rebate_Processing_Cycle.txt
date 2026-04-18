@@ -1,0 +1,42 @@
+REBATE ACCRUAL & SETTLEMENT CYCLE
+
+        Customer Invoice Generated
+                    ↓
+        Calculate Rebate Entitlement:
+        Invoice Amount × Rebate % 
+        (based on tiered volume)
+                    ↓
+        Accrue to Liability:
+        Debit: COGS/Revenue
+        Credit: Rebate Liability (Balance Sheet)
+                    ↓
+        Track Cumulative 
+        Annual Purchases
+                    ↓
+        Customer Files Rebate Claim
+        (Quarterly/Annually)
+                    ↓
+        Finance Verifies:
+        - Claim Validity
+        - Supporting Documentation
+        - Accrual Balance
+                    ↓
+        ┌─ Approved? ─┐
+        │              │
+       YES            NO
+        │              │
+        ↓              ↓
+    Generate        Reject Claim
+    Credit Memo     Notify Customer
+        │              
+        ↓              
+    Post to Customer
+    Account (AR)
+        │
+        ↓
+    Reduce Rebate
+    Liability
+        │
+        ↓
+    Customer Pays
+    Reduced Amount

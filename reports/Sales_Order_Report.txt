@@ -1,0 +1,20 @@
+SALES ORDER ANALYSIS REPORT
+
+Key Metrics:
+- Total Orders Created (MTD/QTD/YTD)
+- Average Order Value
+- Order Value Range (Min/Max)
+- Orders by Customer Segment
+- Orders by Product Line
+- On-Time Delivery Rate
+- Order Fulfillment Status
+
+Report Columns:
+- Order Number
+- Order Date
+- Customer Name
+- Total Order Value
+- Item Count
+- Delivery Date
+- Fulfillment Status (Open/Partial/Complete)
+- Credit Status (Approved/Hold/Blocked)

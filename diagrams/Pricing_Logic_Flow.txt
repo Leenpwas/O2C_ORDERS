@@ -1,0 +1,23 @@
+PRICING LOGIC FLOW
+
+            Customer + Material Combination
+                         ↓
+              Check Access Sequence:
+         (1) Customer-Specific Price?
+                         ↓
+         (2) Material-Specific Price?
+                         ↓
+         (3) Volume-Based Discount?
+                         ↓
+         (4) Standard List Price
+                         ↓
+         Apply Surcharges/Discounts:
+         + Freight Surcharge
+         + Handling Charge
+         - Volume Discount
+         - Promotional Discount
+                         ↓
+              Final Net Price
+                    ↓
+         Check Pricing Override
+         Tolerance Limits

@@ -1,0 +1,56 @@
+HIGH-LEVEL O2C PROCESS FLOW
+
+                           START
+                             ↓
+                    Customer Places Order
+                             ↓
+                    ┌─────────────────────┐
+                    │ Sales Order Entry   │
+                    │ (Transaction VA01)  │
+                    └─────────────────────┘
+                             ↓
+                    ┌─────────────────────┐
+                    │ Credit Check &      │
+                    │ Limit Validation    │
+                    └─────────────────────┘
+                             ↓
+                    ┌─────────────────────┐
+                    │ ATP Check &         │
+                    │ Price Application   │
+                    └─────────────────────┘
+                             ↓
+                    ┌─────────────────────┐
+                    │ Order Confirmation  │
+                    └─────────────────────┘
+                             ↓
+                    ┌─────────────────────┐
+                    │ Inventory Picking & │
+                    │ Batch Determination │
+                    └─────────────────────┘
+                             ↓
+                    ┌─────────────────────┐
+                    │ Goods Issue Posting │
+                    │ (Stock Transfer)    │
+                    └─────────────────────┘
+                             ↓
+                    ┌─────────────────────┐
+                    │ Billing Document    │
+                    │ Generation (VF01)   │
+                    └─────────────────────┘
+                             ↓
+                    ┌─────────────────────┐
+                    │ Revenue Recognition │
+                    │ & FI Posting        │
+                    └─────────────────────┘
+                             ↓
+                    ┌─────────────────────┐
+                    │ Payment Terms &     │
+                    │ Dunning Processing  │
+                    └─────────────────────┘
+                             ↓
+                    ┌─────────────────────┐
+                    │ Cash Collection &   │
+                    │ Reporting           │
+                    └─────────────────────┘
+                             ↓
+                           END

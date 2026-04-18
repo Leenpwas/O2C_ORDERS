@@ -1,0 +1,32 @@
+BATCH DETERMINATION & SELECTION
+
+        Sales Order for Batch-Managed Material
+                       ↓
+        Define Batch Selection Strategy:
+        ┌─────────────────────────┐
+        │ 1. FIFO Strategy        │
+        │    (First-In, First-Out)│
+        └─────────────────────────┘
+        ┌─────────────────────────┐
+        │ 2. FEFO Strategy        │
+        │    (First-Expiry,       │
+        │     First-Out)          │
+        └─────────────────────────┘
+                       ↓
+        Retrieve Available Batches:
+        - Filter by Shelf-Life
+        - Check Quality Status
+        - Verify Stock Level
+                       ↓
+        Sort by Strategy:
+        - FIFO: By Batch Age
+        - FEFO: By Expiry Date
+                       ↓
+        Auto-Select Best Batch
+                       ↓
+        Reserve Batch Quantity
+        for Order
+                       ↓
+        At Goods Issue:
+        Create GI with
+        Selected Batch Number
