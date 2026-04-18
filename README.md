@@ -181,7 +181,7 @@ Contributions are welcome! To contribute:
 ## 👤 Author
 
 **Swapneel Dutta**  
-📧 Email: [your-email@example.com]  
+📧 Email: 2330275@kiit.ac.in  
 🎓 B.Tech - Electronics & Computer Science Engineering  
 🏫 KIIT Deemed to be University, Bhubaneswar  
 📅 April 2026
@@ -470,7 +470,7 @@ The main project documentation is located in `docs/O2C_SAP_Documentation.pdf`:
 ## Author Information
 
 **Student**: Swapneel Dutta  
-**Roll Number**: [To be filled]  
+**Roll Number**: 2330275  
 **Program**: B.Tech - Electronics & Computer Science Engineering  
 **Batch**: KIIT Deemed to be University, Bhubaneswar  
 **Submission Date**: April 2026
