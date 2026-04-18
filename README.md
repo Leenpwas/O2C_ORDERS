@@ -1,7 +1,248 @@
+# O2C_ORDERS - Order-to-Cash SAP Configuration
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/Leenpwas/O2C_ORDERS)
+[![License](https://img.shields.io/badge/License-Academic-green)](#-license)
+[![Version](https://img.shields.io/badge/Version-1.0-brightgreen)](#)
+[![Last Updated](https://img.shields.io/badge/Last%20Updated-April%202026-blue)](#)
+
+A comprehensive, end-to-end configuration guide for implementing the **Order-to-Cash (O2C) process** in SAP ERP (SD Module). This project covers master data setup, pricing conditions, credit management, batch determination, variant configuration, and rebate processing.
+
+## 📑 Table of Contents
+
+- [Quick Start](#-quick-start)
+- [Overview](#-overview)
+- [Project Structure](#-project-structure)
+- [Key Features](#-key-features)
+- [Technologies](#-technologies)
+- [Getting Help](#-getting-help)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/Leenpwas/O2C_ORDERS.git
+cd O2C_ORDERS
+
+# Review the documentation
+cat docs/Configuration_Steps.md
+
+# Explore process diagrams
+cat diagrams/O2C_Process_Flow.txt
+
+# Check configuration files
+ls -la config/
+```
+
+---
+
+## 📋 Overview
+
+This project provides a comprehensive, end-to-end configuration guide for implementing the Order-to-Cash process in SAP ERP (SD module). It covers:
+
+- ✅ Customer & product master data setup
+- ✅ Advanced pricing with tiered discounts
+- ✅ Credit management & dunning procedures
+- ✅ Batch & serial number tracking
+- ✅ Configurable product variants
+- ✅ Rebate accrual & settlement
+
+**Implementation Timeline**: 2-3 weeks for full production deployment
+
+---
+
+## 📂 Project Structure
+
+```
+O2C_ORDERS/
+├── README.md                           # Project overview (this file)
+├── docs/
+│   ├── Configuration_Steps.md          # Detailed setup procedures
+│   └── O2C_SAP_Documentation.pdf       # Complete technical guide
+├── config/
+│   ├── Master_Data_Setup.txt          # Customer & product data
+│   ├── Pricing_Conditions.txt         # Condition types & access sequences
+│   ├── Credit_Management.txt          # Credit limits & dunning
+│   ├── Batch_Management.txt           # FIFO/FEFO batch determination
+│   ├── Variant_Config.txt             # Configurable products
+│   └── Rebate_Processing.txt          # Accrual & settlement rules
+├── reports/
+│   ├── Sales_Order_Report.txt         # Order metrics & KPIs
+│   ├── Delivery_Performance.txt       # On-time delivery tracking
+│   ├── Billing_Analysis.txt           # Invoice & revenue analysis
+│   ├── Credit_Aging.txt               # AR aging & collections
+│   └── Rebate_Accrual.txt             # Rebate liability tracking
+├── scripts/
+│   ├── ABAP_ALV_Report_Template.abap  # Sample ABAP report code
+│   ├── Batch_Upload_Script.sql        # SQL test data loader
+│   └── Integration_Points.txt         # RFC/IDoc configuration
+└── diagrams/
+    ├── O2C_Process_Flow.txt           # High-level process flow
+    ├── Pricing_Logic_Flow.txt         # Pricing decision tree
+    ├── Credit_Management_Flow.txt     # Credit check logic
+    ├── Batch_Determination.txt        # Batch selection algorithm
+    └── Rebate_Processing_Cycle.txt    # Rebate accrual & settlement
+```
+
+---
+
+## ⭐ Key Features
+
+### 1️⃣ Sales Order Management
+- Customer master integration with credit validation
+- Pricing condition application via access sequences
+- Credit limit validation & available-to-promise checking
+- Order confirmation with blocking rules
+
+### 2️⃣ Advanced Pricing
+- Base price determination via condition records
+- Volume-based tiered discounts
+- Freight, handling & tax surcharges
+- Free goods promotions
+- Manual pricing override with tolerance limits
+
+### 3️⃣ Credit Management
+- Dynamic credit limit enforcement
+- Credit exposure calculation (AR + Open SO)
+- Multi-level dunning procedures
+- Credit holds & approval workflows
+- Risk classification by customer segment
+
+### 4️⃣ Batch & Serial Tracking
+- FIFO (First-In-First-Out) batch selection
+- FEFO (First-Expiry-First-Out) for shelf-life items
+- Expiry date validation & automatic batch numbering
+- Full serial number traceability
+
+### 5️⃣ Configurable Products
+- Variant characteristic definitions
+- Dynamic BOM explosion for variants
+- Variant-specific pricing & surcharges
+- Production planning integration
+
+### 6️⃣ Rebate Management
+- Tiered rebate structures (volume-based)
+- Accrual basis accounting
+- Quarterly/annual claim processing
+- Settlement & financial reporting
+
+---
+
+## 🛠️ Technologies & SAP Modules
+
+| Module | Purpose | Key Transactions |
+|--------|---------|------------------|
+| **SD** (Sales & Distribution) | Order management | VA01, VA02, VA03 |
+| **MM** (Materials Management) | Batch & inventory | MB01, MB02, MM01 |
+| **FI** (Financial Accounting) | Revenue & AR | F-27, F-28, FB70 |
+| **ABAP/4** | Custom development | SE38, SE38 |
+
+**System Requirements:**
+- SAP ECC 6.0 or S/4HANA (2020+)
+- Modules: SD, MM, FI
+- Database: Sufficient space for test data
+
+---
+
+## 📊 Project Statistics
+
+- 📄 **Documentation**: 5+ comprehensive pages
+- 🔧 **Configuration Items**: 40+ SAP tables
+- 📈 **Reports**: 5 custom ALV templates
+- 💻 **Scripts**: ABAP & SQL examples included
+- 📉 **Process Flows**: 5 detailed diagrams
+
+---
+
+## 📚 Getting Help
+
+- 📖 **Documentation**: Review [docs/Configuration_Steps.md](docs/Configuration_Steps.md)
+- 📊 **Reports**: See [reports/](reports/) for report templates
+- 💻 **Code**: Check [scripts/](scripts/) for ABAP and SQL samples
+- 🔗 **Diagrams**: Study [diagrams/](diagrams/) for workflow visualizations
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! To contribute:
+
+1. **Fork** the repository
+2. **Create** a feature branch: `git checkout -b feature/improvement`
+3. **Commit** your changes: `git commit -m 'Add feature'`
+4. **Push** to the branch: `git push origin feature/improvement`
+5. **Submit** a Pull Request
+
+---
+
+## 👤 Author
+
+**Swapneel Dutta**  
+📧 Email: [your-email@example.com]  
+🎓 B.Tech - Electronics & Computer Science Engineering  
+🏫 KIIT Deemed to be University, Bhubaneswar  
+📅 April 2026
+
+---
+
+## 📄 License
+
+This project is submitted as an academic capstone project under the **Educational Content License**. All content is original and created for educational purposes.
+
+For commercial use or inquiries, please contact the author.
+
+---
+
+## 📈 Status & Version
+
+| Item | Value |
+|------|-------|
+| **Status** | ✅ Complete & Production Ready |
+| **Version** | 1.0 Final |
+| **Last Updated** | April 18, 2026 |
+| **Maintained By** | Swapneel Dutta |
+
+---
+
+## ⭐ Support
+
+If this project helped you, please consider:
+- ⭐ **Starring** the repository
+- 🔗 **Sharing** it with others
+- 💬 **Providing feedback** via Issues
+- 🤝 **Contributing** improvements
+
+---
+
+**Happy Order-to-Cash Implementation! 🚀**
+# O2C_ORDERS
 # Order-to-Cash (O2C) SAP Configuration Project
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue)](https://github.com/Leenpwas/O2C_ORDERS)
+[![License](https://img.shields.io/badge/License-Academic-green)](#license)
+[![Last Updated](https://img.shields.io/badge/Last%20Updated-April%202026-brightgreen)](#)
 
 ## Overview
 This project provides a comprehensive, end-to-end configuration guide for implementing the Order-to-Cash process in SAP ERP (SD module). It covers master data setup, pricing conditions, credit management, batch determination, variant configuration, and rebate processing.
+
+## 🚀 Quick Start
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Leenpwas/O2C_ORDERS.git
+   cd O2C_ORDERS
+   ```
+
+2. **Explore the documentation**
+   - Start with [Configuration_Steps.md](docs/Configuration_Steps.md) for detailed setup instructions
+   - Review [O2C_Process_Flow.txt](diagrams/O2C_Process_Flow.txt) for process overview
+
+3. **Review configuration files**
+   - Check [config/](config/) folder for implementation details
+   - Run SQL scripts from [scripts/](scripts/) folder for test data setup
 
 ## Project Structure
 
@@ -243,5 +484,6 @@ This project is submitted as an academic capstone project. All content is origin
 **Status**: ✓ Complete & Ready for Submission  
 **Last Updated**: April 2026  
 **Version**: 1.0 Final
-#   O 2 C _ O R D E R S  
+#   O 2 C _ O R D E R S 
+ 
  
